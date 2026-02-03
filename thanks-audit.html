@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Ops Toolkit — Payment received</title>
-  <meta name="description" content="Thanks — next step: complete intake." />
+  <title>AI Ops Toolkit — Thanks (Audit)</title>
+  <meta name="description" content="Thanks for purchasing the Automation Audit. Next step: intake." />
   <meta name="theme-color" content="#f8fafc" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <div class="topbar">
@@ -19,47 +19,63 @@
         <a href="/">Home</a>
         <a href="/products.html">Products</a>
         <a href="/intake.html">Intake</a>
+        <a class="btn primary" href="https://nowpayments.io/payment/?iid=5483187609" target="_blank" rel="noopener">Book Audit</a>
       </div>
     </div>
   </div>
 
   <div class="wrap">
     <div class="section">
-      <div class="pill"><span class="dot"></span> Step complete</div>
-      <h1>Payment received — next: intake</h1>
-      <p class="sub">To deliver your Audit within 48 hours, we need your workflow details.</p>
+      <div class="pill"><span class="dot"></span> Payment received</div>
+      <h1>Thank you — you’re in.</h1>
+      <p class="sub">Next step: complete the intake so we can start the Audit and deliver within 48 hours.</p>
 
-      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn primary" href="/intake.html">Complete intake</a>
-        <a class="btn" href="/products.html">Browse products</a>
-      </div>
+      <div style="margin-top:16px" class="mockWindow" aria-label="Next steps preview">
+        <div class="mockInner">
+          <div class="mockTop">
+            <div class="dots" aria-hidden="true"><span class="dotx"></span><span class="dotx"></span><span class="dotx"></span></div>
+            <div class="mockTitle">Audit — Next Steps</div>
+            <div class="mockBadge">Action required</div>
+          </div>
 
-      <div style="margin-top:16px" class="notice">
-        <strong>Tip:</strong> Save your payment confirmation (TXID/receipt). If anything goes wrong, email <span class="mono">Steveaiops@outlook.com</span>.
-      </div>
+          <div class="mockApp">
+            <aside class="mockSide" aria-label="Sidebar">
+              <div class="sideTitle">Checklist</div>
+              <nav class="mockNav">
+                <a class="active" href="#" onclick="return false"><span>Intake</span><span>1</span></a>
+                <a href="#" onclick="return false"><span>Review</span><span>2</span></a>
+                <a href="#" onclick="return false"><span>Delivery</span><span>48h</span></a>
+              </nav>
+            </aside>
 
-      <div class="section">
-        <h2>What you’ll receive</h2>
-        <div class="cardsGrid">
-          <div class="panel third">
-            <h3>Scorecard</h3>
-            <p>Bottlenecks, risk flags, and quick wins.</p>
+            <section class="mockMain" aria-label="Main">
+              <div class="mockMainTop">
+                <div class="mockSearch">Paste workflow notes…</div>
+                <div style="display:flex;gap:8px;align-items:center">
+                  <span class="mockChip teal">Start now</span>
+                  <span class="mockChip">Fast</span>
+                </div>
+              </div>
+
+              <div class="mockTable" aria-label="Steps">
+                <div class="kpiLabel">Do this now</div>
+                <div class="mockRow"><div><strong>1) Open intake page</strong><small>Answer a few questions</small></div><span class="mockPill teal">Go</span></div>
+                <div class="mockRow"><div><strong>2) Share stack + goals</strong><small>Tools, workflows, pain points</small></div><span class="mockPill">Info</span></div>
+                <div class="mockRow"><div><strong>3) Expect delivery</strong><small>Scorecard + roadmap + Loom</small></div><span class="mockPill">48h</span></div>
+              </div>
+            </section>
           </div>
-          <div class="panel third">
-            <h3>ROI Roadmap</h3>
-            <p>Top 10 ranked by ROI/effort.</p>
-          </div>
-          <div class="panel third">
-            <h3>Loom walkthrough</h3>
-            <p>15–25 minutes explaining next steps.</p>
-          </div>
+
+          <div class="micro" style="margin-top:12px">If you already paid, just complete intake and we’ll start.</div>
         </div>
       </div>
 
-      <div class="hr"></div>
-      <div class="footer">
-        <div><strong>Support:</strong> <span class="mono">Steveaiops@outlook.com</span></div>
+      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn primary" href="/intake.html">Complete Intake</a>
+        <a class="btn ghost" href="/products.html">Back to products</a>
       </div>
+
+      <div class="micro" style="margin-top:10px">Support: <span class="mono">Steveaiops@outlook.com</span></div>
     </div>
   </div>
 </body>
