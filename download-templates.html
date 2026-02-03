@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Ops Toolkit — Templates Pack Download</title>
+  <meta name="description" content="Download your Templates Pack + start using it in 30 minutes." />
+  <meta name="theme-color" content="#f8fafc" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .hero{padding:40px 0 10px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;align-items:start}
+    .left{grid-column:span 12}
+    .right{grid-column:span 12}
+    @media(min-width:980px){.left{grid-column:span 7}.right{grid-column:span 5}}
+
+    .steps{display:grid;gap:10px;margin-top:14px}
+    .step{border:1px solid rgba(15,23,42,.10);background:rgba(255,255,255,.78);border-radius:16px;padding:12px 14px;box-shadow:var(--shadow2)}
+    .step strong{display:block}
+    .step p{margin:6px 0 0;color:var(--muted);line-height:1.6}
+
+    .dl{display:grid;gap:12px}
+    .dl a{display:flex;align-items:center;justify-content:space-between;gap:12px;text-decoration:none}
+    .dl .name{font-weight:900;letter-spacing:-.01em}
+    .dl .meta{color:var(--muted2);font-size:12px;font-weight:800}
+
+    .badge{font-size:11px;font-weight:900;color:rgba(var(--accentRgb),1);background:rgba(var(--accentRgb),.12);border:1px solid rgba(var(--accentRgb),.18);padding:5px 8px;border-radius:999px}
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand"><span class="logo" aria-hidden="true"></span> AI Ops Toolkit</div>
+      <div class="nav">
+        <a href="/">Home</a>
+        <a href="/products.html">Products</a>
+        <a href="/templates.html">Templates</a>
+        <a href="/intake.html">Intake</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="hero">
+      <div class="pill"><span class="dot"></span> Delivery · Templates Pack</div>
+      <h1>Download your Templates Pack</h1>
+      <p class="sub">This is your delivery page. Start with the Quickstart, then use the systems exactly as written.
+      If you want us to customize this to your exact stack, book an Audit.</p>
+    </div>
+
+    <div class="grid">
+      <div class="left">
+        <div class="mockWindow" aria-label="Templates workspace preview">
+          <div class="mockInner">
+            <div class="mockTop">
+              <div class="dots" aria-hidden="true"><span class="dotx"></span><span class="dotx"></span><span class="dotx"></span></div>
+              <div class="mockTitle">Templates Pack — Workspace</div>
+              <div class="mockBadge">v1</div>
+            </div>
+
+            <div class="mockApp">
+              <aside class="mockSide" aria-label="Sidebar">
+                <div class="sideTitle">Library</div>
+                <nav class="mockNav">
+                  <a class="active" href="#" onclick="return false"><span>Quickstart</span><span>00</span></a>
+                  <a href="#" onclick="return false"><span>Onboarding</span><span>01</span></a>
+                  <a href="#" onclick="return false"><span>Delivery</span><span>02</span></a>
+                  <a href="#" onclick="return false"><span>Reporting</span><span>03</span></a>
+                  <a href="#" onclick="return false"><span>Prompts</span><span>04</span></a>
+                </nav>
+              </aside>
+
+              <section class="mockMain" aria-label="Main">
+                <div class="mockMainTop">
+                  <div class="mockSearch">Search docs…</div>
+                  <div style="display:flex;gap:8px;align-items:center">
+                    <span class="mockChip teal">Copy/paste</span>
+                    <span class="mockChip">Client-ready</span>
+                  </div>
+                </div>
+
+                <div class="mockTable" aria-label="What you got">
+                  <div class="kpiLabel">Included</div>
+                  <div class="mockRow"><div><strong>Onboarding System</strong><small>Scope control + kickoff + setup</small></div><span class="mockPill teal">SOP</span></div>
+                  <div class="mockRow"><div><strong>Delivery System</strong><small>QA + handoff + change control</small></div><span class="mockPill">SOP</span></div>
+                  <div class="mockRow"><div><strong>Reporting System</strong><small>Weekly report + meeting notes → actions</small></div><span class="mockPill">Template</span></div>
+                </div>
+              </section>
+            </div>
+
+            <div class="micro" style="margin-top:12px">These downloads are the real product. Preview components reference these modules.</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2>Start in 30 minutes</h2>
+          <div class="steps">
+            <div class="step"><strong>1) Read Quickstart</strong><p>It tells you where to paste this into your workflow and what to implement first.</p></div>
+            <div class="step"><strong>2) Install the Onboarding System</strong><p>This creates scope clarity + stops chaotic handoffs.</p></div>
+            <div class="step"><strong>3) Ship delivery + reporting</strong><p>Use the checklists, then send the weekly report template every Friday.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="panel">
+          <h3 style="margin:0 0 8px">Downloads</h3>
+          <p class="kicker">Download each module. (A single ZIP bundle will be added next.)</p>
+
+          <div class="dl">
+            <a class="btn" href="/templates-pack/00_Quickstart.md" download><span><span class="name">00 — Quickstart</span><div class="meta">Setup + first wins</div></span><span class="badge">Start here</span></a>
+            <a class="btn" href="/templates-pack/01_Onboarding_System.md" download><span><span class="name">01 — Onboarding System</span><div class="meta">Intake, scope, kickoff</div></span><span class="badge">System</span></a>
+            <a class="btn" href="/templates-pack/02_Delivery_System.md" download><span><span class="name">02 — Delivery System</span><div class="meta">QA + handoff</div></span><span class="badge">System</span></a>
+            <a class="btn" href="/templates-pack/03_Reporting_System.md" download><span><span class="name">03 — Reporting System</span><div class="meta">Weekly report + actions</div></span><span class="badge">Template</span></a>
+            <a class="btn" href="/templates-pack/04_Prompt_Library.md" download><span><span class="name">04 — Prompt Library</span><div class="meta">Proposals, updates, ops</div></span><span class="badge">Copy</span></a>
+          </div>
+
+          <div class="hr"></div>
+          <div class="micro"><strong>Support:</strong> <span class="mono">Steveaiops@outlook.com</span></div>
+        </div>
+
+        <div class="panel" style="margin-top:14px">
+          <h3 style="margin:0 0 8px">Want it customized?</h3>
+          <p class="kicker">If you want a roadmap tailored to your stack and client flow, book an Audit.</p>
+          <a class="btn primary" href="https://nowpayments.io/payment/?iid=5483187609" target="_blank" rel="noopener">Book Audit</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+    <div class="footer">
+      <div><strong>AI Ops Toolkit</strong> · Templates Pack delivery</div>
+    </div>
+  </div>
+</body>
+</html>
