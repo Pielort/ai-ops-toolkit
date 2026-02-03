@@ -3,105 +3,232 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Steven — AI Ops Toolkit</title>
-  <meta name="description" content="AI workflows that save time and make money — for agencies & freelancers. Practical templates, no hype." />
+  <title>AI Ops Toolkit — Automate onboarding & delivery</title>
+  <meta name="description" content="Automation Audit + Roadmap in 48 hours. Built for freelancers and agencies. Practical systems, no hype." />
+  <meta property="og:title" content="AI Ops Toolkit" />
+  <meta property="og:description" content="Automation Audit + Roadmap in 48 hours — so you know exactly what to build next." />
+  <meta property="og:type" content="website" />
   <style>
     :root{
-      --bg:#0b0f17; --card:#111827; --muted:#94a3b8; --text:#e5e7eb; --accent:#60a5fa; --accent2:#34d399;
-      --border:rgba(148,163,184,.18);
+      --bg:#070a12;
+      --card:#0c1222;
+      --muted:#9aa6bd;
+      --text:#e8edf6;
+      --accent:#7dd3fc;
+      --accent2:#34d399;
+      --border:rgba(148,163,184,.16);
+      --shadow: 0 16px 40px rgba(0,0,0,.45);
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:radial-gradient(1200px 700px at 20% -10%, rgba(96,165,250,.25), transparent 55%), var(--bg); color:var(--text)}
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:
+      radial-gradient(1200px 700px at 20% -10%, rgba(125,211,252,.18), transparent 55%),
+      radial-gradient(900px 600px at 95% 10%, rgba(52,211,153,.12), transparent 55%),
+      var(--bg);
+      color:var(--text)
+    }
     a{color:inherit}
-    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 64px}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 72px}
     .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:rgba(17,24,39,.65); color:var(--muted);font-size:13px}
+    .badge{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:rgba(12,18,34,.72); color:var(--muted);font-size:13px}
     .dot{width:8px;height:8px;border-radius:50%;background:var(--accent2)}
-    h1{margin:22px 0 8px;font-size:42px;line-height:1.05;letter-spacing:-.02em}
-    .sub{max-width:720px;color:var(--muted);font-size:18px;line-height:1.5}
-    .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:rgba(17,24,39,.8);text-decoration:none;font-weight:600}
-    .btn.primary{background:linear-gradient(180deg, rgba(96,165,250,.95), rgba(96,165,250,.75)); border-color:rgba(96,165,250,.55); color:#06101f}
+    .nav{display:flex;gap:14px;align-items:center;color:var(--muted);font-size:13px}
+    .nav a{opacity:.9;text-decoration:none}
+    .nav a:hover{opacity:1;text-decoration:underline}
+
+    .hero{padding:36px 0 18px}
+    h1{margin:0 0 10px;font-size:46px;line-height:1.02;letter-spacing:-.03em}
+    .sub{max-width:780px;color:var(--muted);font-size:18px;line-height:1.55}
+
+    .cta{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:rgba(12,18,34,.78);text-decoration:none;font-weight:700}
+    .btn.primary{background:linear-gradient(180deg, rgba(125,211,252,.95), rgba(125,211,252,.72)); border-color:rgba(125,211,252,.55); color:#06101f}
+    .btn.secondary{border-color:rgba(52,211,153,.35)}
+    .micro{color:var(--muted);font-size:13px;line-height:1.45}
+
     .grid{margin-top:26px;display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    .card{grid-column:span 12; border:1px solid var(--border); background:rgba(17,24,39,.78); border-radius:16px; padding:16px}
-    @media(min-width:860px){
+    .card{grid-column:span 12; border:1px solid var(--border); background:rgba(12,18,34,.70); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
+    @media(min-width:900px){
       .card.half{grid-column:span 6}
       .card.third{grid-column:span 4}
     }
-    .card h3{margin:0 0 6px;font-size:16px}
-    .card p{margin:0;color:var(--muted);line-height:1.45}
+    .card h3{margin:0 0 8px;font-size:16px;letter-spacing:-.01em}
+    .card p{margin:0;color:var(--muted);line-height:1.5}
     .list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
-    .list li{margin:6px 0}
-    .footer{margin-top:26px;color:var(--muted);font-size:13px;line-height:1.45}
-    .mini{font-size:12px;color:var(--muted)}
-    .hr{height:1px;background:var(--border);margin:18px 0}
+    .list li{margin:7px 0}
+
+    .section{margin-top:26px}
+    .section h2{margin:0 0 8px;font-size:22px;letter-spacing:-.02em}
+    .kicker{color:var(--muted);margin:0 0 12px;line-height:1.55}
+
+    .pricing{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .tier{grid-column:span 12;border:1px solid var(--border); background:rgba(12,18,34,.70); border-radius:18px; padding:18px; box-shadow:var(--shadow)}
+    .tier.reco{border-color:rgba(125,211,252,.45); background:linear-gradient(180deg, rgba(12,18,34,.75), rgba(12,18,34,.58))}
+    @media(min-width:900px){
+      .tier{grid-column:span 4}
+    }
+    .price{margin:8px 0 10px;font-size:28px;font-weight:800;letter-spacing:-.02em}
+    .pill{display:inline-flex;gap:8px;align-items:center;border:1px solid var(--border);background:rgba(255,255,255,.03);padding:6px 10px;border-radius:999px;color:var(--muted);font-size:12px}
+
+    .faq{margin-top:10px}
+    details{border:1px solid var(--border);border-radius:14px;padding:12px 14px;background:rgba(12,18,34,.62)}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
+    details p{margin:10px 0 0;color:var(--muted);line-height:1.55}
+
+    .hr{height:1px;background:var(--border);margin:22px 0}
+    .footer{margin-top:18px;color:var(--muted);font-size:13px;line-height:1.5}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <div class="wrap" id="top">
     <div class="top">
-      <div class="badge"><span class="dot"></span> Steven’s AI Ops Toolkit</div>
-      <div class="mini">Built for agencies & freelancers</div>
+      <div class="badge"><span class="dot"></span> AI Ops Toolkit</div>
+      <div class="nav">
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="/intake.html">Intake</a>
+      </div>
     </div>
 
-    <h1>AI workflows that save time<br/>and make money.</h1>
-    <p class="sub">
-      Practical templates for client work: onboarding, SOPs, proposals, reporting, content pipelines.
-      No hype. Just systems you can copy.
-    </p>
+    <div class="hero">
+      <h1>Automate onboarding + delivery<br/>so you can take more clients — without chaos.</h1>
+      <p class="sub">
+        Get a <strong>48-hour Automation Audit</strong> + a roadmap ranked by ROI, so you know exactly what to build next.
+        Built for <strong>freelancers</strong> and <strong>agencies</strong>. Practical systems, no hype.
+      </p>
 
-    <div class="cta">
-      <!-- Replace # with your newsletter URL when ready -->
-      <a class="btn primary" href="#">Get the free workflow pack</a>
-      <a class="btn" href="#">Join the weekly newsletter</a>
+      <div class="cta">
+        <a class="btn primary" href="https://nowpayments.io/payment/?iid=5483187609" target="_blank" rel="noopener">Book Audit ($499)</a>
+        <a class="btn secondary" href="#pricing">See pricing</a>
+        <span class="micro">Risk reversal: If you don’t leave with a clear 10‑item roadmap + next steps, refund.</span>
+      </div>
     </div>
 
     <div class="grid">
       <div class="card half">
-        <h3>Free pack: 10 AI workflows agencies can copy</h3>
-        <p>Short, concrete playbooks you can implement in under 30 minutes each.</p>
+        <h3>For freelancers</h3>
+        <p>Stop reinventing onboarding and reporting. Reduce admin hours. Deliver faster with a repeatable system.</p>
         <ul class="list">
-          <li>Client onboarding brief → clean scope + deliverables</li>
-          <li>Proposal builder → positioning + pricing bullets</li>
-          <li>Meeting notes → action items + follow-up email</li>
-          <li>Weekly client report → metrics + narrative + next steps</li>
-          <li>Content pipeline → idea → script → edit notes → post</li>
+          <li>Cleaner intake → clearer scope</li>
+          <li>Fewer follow‑ups and missed tasks</li>
+          <li>More time for paid work</li>
         </ul>
       </div>
 
       <div class="card half">
-        <h3>What you’ll get</h3>
-        <p>Clear, operator-style guidance you can use even with a small audience.</p>
+        <h3>For agencies</h3>
+        <p>Standardize delivery across the team. Reduce handoff failures. Make reporting consistent and scalable.</p>
         <ul class="list">
-          <li>Tool picks (when they actually matter)</li>
-          <li>Copy/paste templates</li>
-          <li>Common failure modes + fixes</li>
-          <li>Guardrails (so automations don’t blow up)</li>
+          <li>Repeatable onboarding + delivery process</li>
+          <li>Consistent client reporting</li>
+          <li>Ops you can scale without chaos</li>
         </ul>
       </div>
 
       <div class="card third">
-        <h3>Operator lens</h3>
-        <p>If it doesn’t reduce time-to-output for a real task, it’s not innovation yet — it’s a demo.</p>
+        <h3>48-hour turnaround</h3>
+        <p>Pay → intake → we review your stack → you receive a scorecard + roadmap + Loom walkthrough.</p>
       </div>
-
       <div class="card third">
-        <h3>Clean + insightful</h3>
-        <p>No ragebait. No spam. No fake urgency. Just useful systems.</p>
+        <h3>Built on your tools</h3>
+        <p>Zapier/Make/Airtable/Notion/CRM — we recommend the simplest stack that fits your workflow.</p>
       </div>
-
       <div class="card third">
-        <h3>Built to monetize later</h3>
-        <p>Newsletter + toolkit lets you add affiliates and sponsors without turning your feed into ads.</p>
+        <h3>Conversion-first</h3>
+        <p>Clarity beats complexity. You’ll know what to build, why it matters, and what it unlocks.</p>
+      </div>
+    </div>
+
+    <div class="section" id="pricing">
+      <h2>Pricing</h2>
+      <p class="kicker">Start with the Audit if you want clarity fast. Upgrade to a Sprint when you’re ready to build.</p>
+
+      <div class="pricing">
+        <div class="tier">
+          <div class="pill">Self‑serve</div>
+          <h3 style="margin:10px 0 4px">Templates Pack</h3>
+          <div class="price">$79</div>
+          <p>Notion templates + SOPs + prompts you can reuse across clients.</p>
+          <ul class="list">
+            <li>Onboarding checklist + SOPs</li>
+            <li>Delivery + reporting templates</li>
+            <li>Prompt library (sales + ops)</li>
+          </ul>
+          <div class="cta" style="margin-top:14px">
+            <a class="btn" href="#" title="(Coming next)">Get Templates (next)</a>
+          </div>
+        </div>
+
+        <div class="tier reco">
+          <div class="pill"><span class="dot"></span> Recommended</div>
+          <h3 style="margin:10px 0 4px">Automation Audit + Roadmap</h3>
+          <div class="price">$499</div>
+          <p>Scorecard + top 10 roadmap ranked by ROI/effort, delivered in 48 hours.</p>
+          <ul class="list">
+            <li>Stack check + bottlenecks</li>
+            <li>Automation scorecard</li>
+            <li>Top 10 roadmap + Quick Win</li>
+            <li>Loom walkthrough (15–25 min)</li>
+          </ul>
+          <div class="cta" style="margin-top:14px">
+            <a class="btn primary" href="https://nowpayments.io/payment/?iid=5483187609" target="_blank" rel="noopener">Book Audit ($499)</a>
+            <a class="btn" href="/intake.html">After payment → Intake</a>
+          </div>
+          <div class="micro" style="margin-top:10px">Crypto payments accepted (USDC/USDT/ETH + BTC). ERC20 supported.</div>
+        </div>
+
+        <div class="tier">
+          <div class="pill">Build it for you</div>
+          <h3 style="margin:10px 0 4px">Implementation Sprint</h3>
+          <div class="price">from $1,500</div>
+          <p>We build 2–3 workflows end‑to‑end in 7 days, plus handoff training.</p>
+          <ul class="list">
+            <li>2–3 workflows (intake → delivery → reporting)</li>
+            <li>Optional Airtable/Notion setup</li>
+            <li>Handoff + 14‑day support</li>
+          </ul>
+          <div class="cta" style="margin-top:14px">
+            <a class="btn" href="#" title="(Coming next)">Apply for Sprint (next)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="faq">
+      <h2>FAQ</h2>
+      <p class="kicker">Short answers. Clear expectations.</p>
+
+      <div class="faq">
+        <details open>
+          <summary>Do I need Zapier/Make/Airtable already?</summary>
+          <p>No. We’ll recommend the simplest stack for your workflow and budget.</p>
+        </details>
+        <details>
+          <summary>What do I receive within 48 hours?</summary>
+          <p>Your scorecard, a prioritized 10‑item roadmap, and a Loom walkthrough explaining next steps.</p>
+        </details>
+        <details>
+          <summary>Is implementation included?</summary>
+          <p>The Audit is strategy + roadmap. If you want us to build it, upgrade to an Implementation Sprint.</p>
+        </details>
+        <details>
+          <summary>Refunds?</summary>
+          <p>If you don’t receive a clear roadmap + next steps you can execute, you can request a refund.</p>
+        </details>
+        <details>
+          <summary>How do I start after payment?</summary>
+          <p>After you pay, complete the Intake page: <a href="/intake.html">/intake</a>.</p>
+        </details>
       </div>
     </div>
 
     <div class="hr"></div>
 
     <div class="footer">
-      <strong>Disclosure:</strong> If this site includes affiliate links in the future, I may earn a commission at no extra cost to you.
-      <br/>
-      <strong>Contact:</strong> <span class="mini">(add an email here)</span>
+      <div><strong>Payments:</strong> Crypto accepted via NOWPayments (USDC/USDT/ETH + BTC). ERC20 supported.</div>
+      <div style="margin-top:6px"><strong>Disclosure:</strong> If this site includes affiliate links in the future, we may earn a commission at no extra cost to you.</div>
+      <div style="margin-top:6px"><strong>Contact:</strong> <span class="mono">(add email/telegram here)</span></div>
     </div>
   </div>
 </body>

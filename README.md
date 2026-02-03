@@ -1,18 +1,21 @@
-# Steven — AI Ops Toolkit (GitHub Pages)
+# AI Ops Toolkit — Commercial Hub (v1)
 
-This folder contains a simple static site you can deploy for free on **GitHub Pages**.
+Live landing page built to sell:
+- **Automation Audit + Roadmap — $499 (48h)**
+- Built for **freelancers + agencies**
 
-## Deploy (GitHub Pages)
-1) Create a GitHub repo (e.g., `steven-ai-ops-toolkit`).
-2) Upload the contents of this folder to the repo root.
-3) In GitHub: **Settings → Pages**
-   - Source: `Deploy from a branch`
-   - Branch: `main` / `(root)`
-4) Your site will be live at: `https://<username>.github.io/<repo>/`
+## Live
+- Netlify: https://steven-ai-ops-toolkit.netlify.app
 
-## Edit copy
-- `index.html` is the only page.
-- Update the CTA links when your newsletter provider is ready.
+## Checkout
+- NOWPayments (Audit): https://nowpayments.io/payment/?iid=5483187609
 
-## Compliance
-- Add a short disclosure on the page before you add any affiliate links.
+## Pages
+- `/` — Home + pricing + FAQ
+- `/intake.html` — Post-payment intake instructions (form to be added next)
+
+## Next upgrades
+- Add Tally/Typeform intake form
+- Add Templates Pack checkout
+- Add Sprint application form
+- Add premium visuals (3D/WebM/Lottie)
