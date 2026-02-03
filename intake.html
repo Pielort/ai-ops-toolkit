@@ -3,17 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Ops Toolkit — Audit Intake</title>
-  <meta name="description" content="Audit intake: complete after payment. Delivery in 48 hours." />
+  <title>AI Ops Toolkit — Intake</title>
+  <meta name="description" content="After payment: send your workflow details to start the Audit." />
   <meta name="theme-color" content="#f8fafc" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css" />
-  <style>
-    .card{margin-top:14px;border:1px solid var(--border);background:rgba(255,255,255,.78);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    h1{margin:14px 0 8px;font-size:30px;letter-spacing:-.03em}
-  </style>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <div class="topbar">
@@ -23,46 +19,90 @@
         <a href="/">Home</a>
         <a href="/products.html">Products</a>
         <a href="/intake.html">Intake</a>
+        <a class="btn primary" href="https://nowpayments.io/payment/?iid=5483187609" target="_blank" rel="noopener">Book Audit</a>
       </div>
     </div>
   </div>
 
   <div class="wrap">
     <div class="section">
-      <div class="pill"><span class="dot"></span> Audit intake</div>
-      <h1>Send your details (so we can deliver in 48 hours)</h1>
-      <p class="sub">After payment, send the details below to <span class="mono">Steveaiops@outlook.com</span>. We’ll replace this with a proper form next.</p>
+      <div class="pill"><span class="dot"></span> Post‑payment</div>
+      <h1>Intake</h1>
+      <p class="sub">Send the info below and we’ll start your Audit. If you haven’t paid yet, book the Audit first.</p>
 
-      <div class="card">
-        <p class="micro"><strong>Step 1 — Payment</strong></p>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn primary" href="https://nowpayments.io/payment/?iid=5483187609" target="_blank" rel="noopener">Pay for Audit ($499)</a>
-          <a class="btn" href="/thanks-audit.html">If paid → next</a>
+      <div style="margin-top:16px" class="mockWindow" aria-label="Intake app preview">
+        <div class="mockInner">
+          <div class="mockTop">
+            <div class="dots" aria-hidden="true"><span class="dotx"></span><span class="dotx"></span><span class="dotx"></span></div>
+            <div class="mockTitle">Intake — Project Details</div>
+            <div class="mockBadge">Paste & go</div>
+          </div>
+
+          <div class="mockApp">
+            <aside class="mockSide" aria-label="Sidebar">
+              <div class="sideTitle">Sections</div>
+              <nav class="mockNav">
+                <a class="active" href="#" onclick="return false"><span>Stack</span><span>1</span></a>
+                <a href="#" onclick="return false"><span>Workflow</span><span>2</span></a>
+                <a href="#" onclick="return false"><span>Goals</span><span>3</span></a>
+                <a href="#" onclick="return false"><span>Access</span><span>4</span></a>
+              </nav>
+            </aside>
+
+            <section class="mockMain" aria-label="Main">
+              <div class="mockMainTop">
+                <div class="mockSearch">Paste notes…</div>
+                <div style="display:flex;gap:8px;align-items:center">
+                  <span class="mockChip teal">48h</span>
+                  <span class="mockChip">Start</span>
+                </div>
+              </div>
+
+              <div class="mockTable" aria-label="Questions">
+                <div class="kpiLabel">Questions</div>
+                <div class="mockRow"><div><strong>Your tools</strong><small>CRM, Notion, Airtable, Make/Zapier, Slack, etc.</small></div><span class="mockPill teal">Stack</span></div>
+                <div class="mockRow"><div><strong>Your workflow</strong><small>Lead → onboarding → delivery → reporting</small></div><span class="mockPill">Flow</span></div>
+                <div class="mockRow"><div><strong>Goal + constraint</strong><small>What must improve first?</small></div><span class="mockPill">ROI</span></div>
+              </div>
+            </section>
+          </div>
+
+          <div class="micro" style="margin-top:12px">Real form (Tally/Typeform) can be added next. For now, email works.</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Send this by email</h2>
+        <p class="kicker">Email: <span class="mono">Steveaiops@outlook.com</span></p>
+
+        <div class="cardsGrid">
+          <div class="panel half">
+            <h3>1) Your stack</h3>
+            <p>List the tools you use today (CRM, Notion, Make/Zapier, Slack, etc.).</p>
+          </div>
+          <div class="panel half">
+            <h3>2) Your workflow</h3>
+            <p>Describe lead → onboarding → delivery → reporting. Include what breaks and where time is wasted.</p>
+          </div>
+          <div class="panel half">
+            <h3>3) The goal</h3>
+            <p>What does “success” look like in 30 days? (Hours saved, faster delivery, fewer errors, etc.)</p>
+          </div>
+          <div class="panel half">
+            <h3>4) Access notes</h3>
+            <p>If relevant, include any access constraints, approvals, or compliance requirements.</p>
+          </div>
         </div>
 
-        <div class="hr"></div>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="mailto:Steveaiops@outlook.com?subject=AI%20Ops%20Toolkit%20Audit%20Intake">Email intake</a>
+          <a class="btn" href="/products.html">Back to products</a>
+        </div>
+      </div>
 
-        <p class="micro"><strong>Step 2 — Send your details</strong></p>
-        <ul class="list">
-          <li>Your name + best contact (email/Telegram)</li>
-          <li>Freelancer or agency + niche</li>
-          <li>Current tools (Zapier/Make/Airtable/Notion/CRM/etc.)</li>
-          <li>Your current workflow (lead → onboarding → delivery → reporting)</li>
-          <li>Top 3 bottlenecks (what wastes time or breaks)</li>
-          <li>Goal for the next 30 days</li>
-          <li>Constraints (region, crypto only, etc.)</li>
-        </ul>
-
-        <div class="hr"></div>
-
-        <p class="micro"><strong>What you’ll receive</strong></p>
-        <ul class="list">
-          <li>Automation scorecard</li>
-          <li>Top 10 roadmap ranked by ROI/effort</li>
-          <li>Loom walkthrough (15–25 minutes)</li>
-        </ul>
-
-        <p class="micro" style="margin-top:12px"><strong>Support:</strong> <span class="mono">Steveaiops@outlook.com</span></p>
+      <div class="hr"></div>
+      <div class="footer">
+        <div><strong>Support:</strong> <span class="mono">Steveaiops@outlook.com</span></div>
       </div>
     </div>
   </div>
