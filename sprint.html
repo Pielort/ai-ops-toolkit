@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <div class="topbar">
@@ -32,18 +32,61 @@
       <h1>Implementation Sprint</h1>
       <p class="sub">We build your ops system in 7 days: 2–3 workflows end‑to‑end, with handoff training and 14‑day support.</p>
 
-      <div style="margin-top:16px" class="mockWindow" aria-label="Sprint delivery preview">
+      <div style="margin-top:16px" class="mockWindow" aria-label="Sprint app preview">
         <div class="mockInner">
           <div class="mockTop">
             <div class="dots" aria-hidden="true"><span class="dotx"></span><span class="dotx"></span><span class="dotx"></span></div>
-            <div class="mockTitle">Sprint Plan — Build & Launch</div>
+            <div class="mockTitle">Sprint — Build Plan</div>
             <div class="mockBadge">7 days</div>
           </div>
-          <div class="mockGrid">
-            <div class="mockCard third"><div class="mockKpi"><div><div class="kpiLabel">Workflows</div><div class="kpiValue">2–3</div></div><div class="mockPill teal">Built</div></div><div class="mockBar" style="width:72%"></div></div>
-            <div class="mockCard third"><div class="mockKpi"><div><div class="kpiLabel">Handoff</div><div class="kpiValue">Loom</div></div><div class="mockPill">Docs</div></div><div class="mockBar" style="width:58%"></div></div>
-            <div class="mockCard third"><div class="mockKpi"><div><div class="kpiLabel">Support</div><div class="kpiValue">14d</div></div><div class="kpiUp">included</div></div><div class="mockBar" style="width:64%"></div></div>
+
+          <div class="mockApp">
+            <aside class="mockSide" aria-label="Sidebar">
+              <div class="sideTitle">Sprint</div>
+              <nav class="mockNav">
+                <a class="active" href="#" onclick="return false"><span>Backlog</span><span>9</span></a>
+                <a href="#" onclick="return false"><span>Build</span><span>3</span></a>
+                <a href="#" onclick="return false"><span>QA</span><span>7</span></a>
+                <a href="#" onclick="return false"><span>Handoff</span><span>1</span></a>
+              </nav>
+            </aside>
+
+            <section class="mockMain" aria-label="Main">
+              <div class="mockMainTop">
+                <div class="mockSearch">Search tasks…</div>
+                <div style="display:flex;gap:8px;align-items:center">
+                  <span class="mockChip teal">2–3 workflows</span>
+                  <span class="mockChip">14d support</span>
+                </div>
+              </div>
+
+              <div class="mockSplit">
+                <div class="mockTable" aria-label="Sprint tasks">
+                  <div class="kpiLabel">This week’s deliverables</div>
+                  <div class="mockRow"><div><strong>Lead → onboarding</strong><small>Form → CRM → tasks → kickoff</small></div><span class="mockPill teal">Build</span></div>
+                  <div class="mockRow"><div><strong>Delivery → reporting</strong><small>Status summaries + weekly report</small></div><span class="mockPill">Build</span></div>
+                  <div class="mockRow"><div><strong>Alerts + retries</strong><small>Stops silent failures</small></div><span class="mockPill">QA</span></div>
+                </div>
+
+                <div class="mockChart" aria-label="Timeline">
+                  <div class="kpiLabel">Sprint timeline</div>
+                  <svg viewBox="0 0 360 120" role="img" aria-label="timeline chart">
+                    <defs>
+                      <linearGradient id="gs" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="rgba(20,184,166,.95)" />
+                        <stop offset="1" stop-color="rgba(6,182,212,.80)" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M10 90 C 80 86, 120 72, 170 58 C 220 44, 280 36, 350 30" fill="none" stroke="url(#gs)" stroke-width="4" stroke-linecap="round" />
+                    <path d="M10 90 C 80 86, 120 72, 170 58 C 220 44, 280 36, 350 30 L350 110 L10 110 Z" fill="rgba(6,182,212,.10)" />
+                    <line x1="10" y1="110" x2="350" y2="110" stroke="rgba(15,23,42,.10)" />
+                  </svg>
+                </div>
+              </div>
+            </section>
           </div>
+
+          <div class="micro" style="margin-top:12px">Aggressive liquid 3D + app-style preview (pure CSS). Real WebM clips can replace this later.</div>
         </div>
       </div>
 
