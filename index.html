@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
   <style>
     /* page-specific pieces */
     .hero{padding:46px 0 18px}
@@ -22,27 +22,6 @@
     @media(min-width:980px){.heroLeft{grid-column:span 7}.heroRight{grid-column:span 5}}
 
     .ctaRow{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-
-    /* Product preview */
-    .preview{border:1px solid rgba(15,23,42,.10);border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,.84), rgba(255,255,255,.70));box-shadow:var(--shadow);overflow:hidden;position:relative}
-    .preview:before{content:"";position:absolute;inset:-120px -140px auto auto;width:340px;height:340px;border-radius:999px;background:radial-gradient(circle at 30% 30%, rgba(37,99,235,.28), transparent 55%)}
-    .preview:after{content:"";position:absolute;inset:auto -120px -140px auto;width:340px;height:340px;border-radius:999px;background:radial-gradient(circle at 30% 30%, rgba(6,182,212,.26), transparent 55%)}
-    .cards{position:relative;padding:18px}
-    .card3d{border:1px solid rgba(15,23,42,.10);border-radius:16px;background:rgba(255,255,255,.86);box-shadow:0 18px 40px rgba(2,8,23,.14);padding:14px;transform-origin:center;will-change:transform}
-    .stack{display:grid;gap:12px}
-    .card3d.top{transform:perspective(800px) rotateX(10deg) rotateY(-12deg);animation:float1 7s ease-in-out infinite}
-    .card3d.mid{transform:perspective(800px) rotateX(10deg) rotateY(10deg);animation:float2 8s ease-in-out infinite}
-    .card3d.bot{transform:perspective(800px) rotateX(10deg) rotateY(-6deg);animation:float3 9s ease-in-out infinite}
-    @keyframes float1{0%,100%{transform:perspective(800px) rotateX(10deg) rotateY(-12deg) translateY(0)}50%{transform:perspective(800px) rotateX(10deg) rotateY(-12deg) translateY(-6px)}}
-    @keyframes float2{0%,100%{transform:perspective(800px) rotateX(10deg) rotateY(10deg) translateY(0)}50%{transform:perspective(800px) rotateX(10deg) rotateY(10deg) translateY(-8px)}}
-    @keyframes float3{0%,100%{transform:perspective(800px) rotateX(10deg) rotateY(-6deg) translateY(0)}50%{transform:perspective(800px) rotateX(10deg) rotateY(-6deg) translateY(-5px)}}
-    .cardTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
-    .tag{font-size:11px;font-weight:800;color:rgba(var(--accentRgb),1);background:rgba(var(--accentRgb),.10);border:1px solid rgba(var(--accentRgb),.16);padding:5px 8px;border-radius:999px}
-    .miniRow{display:grid;gap:8px}
-    .miniLine{height:10px;border-radius:999px;background:linear-gradient(90deg, rgba(15,23,42,.08), rgba(15,23,42,.03))}
-    .miniLine.w70{width:70%}
-    .miniLine.w85{width:85%}
-    .miniLine.w55{width:55%}
 
     /* Pricing cards */
     .pricing{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
@@ -101,44 +80,57 @@
             <div class="mockInner">
               <div class="mockTop">
                 <div class="dots" aria-hidden="true"><span class="dotx"></span><span class="dotx"></span><span class="dotx"></span></div>
-                <div class="mockTitle">AI Ops Toolkit — Audit Dashboard</div>
-                <div class="mockBadge">48h delivery</div>
+                <div class="mockTitle">AI Ops Toolkit — Audit App</div>
+                <div class="mockBadge">Live preview</div>
               </div>
 
-              <div class="mockGrid">
-                <div class="mockCard third">
-                  <div class="mockKpi"><div><div class="kpiLabel">Ops Health</div><div class="kpiValue">78/100</div></div><div class="kpiUp">+12</div></div>
-                  <div class="mockBar" style="width:78%"></div>
-                </div>
-                <div class="mockCard third">
-                  <div class="mockKpi"><div><div class="kpiLabel">Hours saved / wk</div><div class="kpiValue">6.5</div></div><div class="kpiUp">ROI</div></div>
-                  <div class="mockBar" style="width:64%"></div>
-                </div>
-                <div class="mockCard third">
-                  <div class="mockKpi"><div><div class="kpiLabel">Next build</div><div class="kpiValue">Intake</div></div><div class="mockPill teal">Quick win</div></div>
-                  <div class="mockBar" style="width:52%"></div>
-                </div>
+              <div class="mockApp">
+                <aside class="mockSide" aria-label="Sidebar">
+                  <div class="sideTitle">Dashboard</div>
+                  <nav class="mockNav">
+                    <a class="active" href="#" onclick="return false"><span>Scorecard</span><span>78</span></a>
+                    <a href="#" onclick="return false"><span>Roadmap</span><span>10</span></a>
+                    <a href="#" onclick="return false"><span>Findings</span><span>3</span></a>
+                    <a href="#" onclick="return false"><span>Delivery</span><span>48h</span></a>
+                  </nav>
+                </aside>
 
-                <div class="mockCard half">
-                  <div class="kpiLabel">Top findings</div>
-                  <ul class="mockList">
-                    <li class="mockItem"><span>Scope leaks in onboarding</span><span class="mockPill teal">High</span></li>
-                    <li class="mockItem"><span>Reporting is manual + inconsistent</span><span class="mockPill">Med</span></li>
-                    <li class="mockItem"><span>No failure alerts / retries</span><span class="mockPill">Med</span></li>
-                  </ul>
-                </div>
+                <section class="mockMain" aria-label="Main">
+                  <div class="mockMainTop">
+                    <div class="mockSearch">Search workflows…</div>
+                    <div style="display:flex;gap:8px;align-items:center">
+                      <span class="mockChip teal">Quick win</span>
+                      <span class="mockChip">ROI ranked</span>
+                    </div>
+                  </div>
 
-                <div class="mockCard half">
-                  <div class="kpiLabel">48h roadmap (preview)</div>
-                  <ul class="mockList">
-                    <li class="mockItem"><span>1) Intake → CRM → tasks</span><span class="mockPill teal">Week 1</span></li>
-                    <li class="mockItem"><span>2) Status → weekly report</span><span class="mockPill">Week 2</span></li>
-                    <li class="mockItem"><span>3) Alerts + logging</span><span class="mockPill">Week 3</span></li>
-                  </ul>
-                </div>
+                  <div class="mockSplit">
+                    <div class="mockChart" aria-label="Chart">
+                      <div class="kpiLabel">Ops health trend</div>
+                      <svg viewBox="0 0 360 120" role="img" aria-label="trend chart">
+                        <defs>
+                          <linearGradient id="g" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0" stop-color="rgba(20,184,166,.95)" />
+                            <stop offset="1" stop-color="rgba(6,182,212,.80)" />
+                          </linearGradient>
+                        </defs>
+                        <path d="M10 92 C 55 78, 75 66, 108 72 C 145 79, 150 48, 188 52 C 220 55, 234 34, 268 42 C 305 50, 318 24, 350 30" fill="none" stroke="url(#g)" stroke-width="4" stroke-linecap="round" />
+                        <path d="M10 92 C 55 78, 75 66, 108 72 C 145 79, 150 48, 188 52 C 220 55, 234 34, 268 42 C 305 50, 318 24, 350 30 L350 110 L10 110 Z" fill="rgba(20,184,166,.10)" />
+                        <line x1="10" y1="110" x2="350" y2="110" stroke="rgba(15,23,42,.10)" />
+                      </svg>
+                    </div>
+
+                    <div class="mockTable" aria-label="Roadmap table">
+                      <div class="kpiLabel">Top roadmap items</div>
+                      <div class="mockRow"><div><strong>Intake → CRM → tasks</strong><small>Removes scope leaks + follow-ups</small></div><span class="mockPill teal">Week 1</span></div>
+                      <div class="mockRow"><div><strong>Status → weekly report</strong><small>Auto summaries + client-facing output</small></div><span class="mockPill">Week 2</span></div>
+                      <div class="mockRow"><div><strong>Alerts + retries</strong><small>Stops silent failures</small></div><span class="mockPill">Week 3</span></div>
+                    </div>
+                  </div>
+                </section>
               </div>
 
-              <div class="micro" style="margin-top:12px">Product-style visuals (fast HTML/CSS). WebM clips can replace this later.</div>
+              <div class="micro" style="margin-top:12px">App-style mock + 3D liquid feel (pure CSS). WebM clips can replace this later.</div>
             </div>
           </div>
         </div>
