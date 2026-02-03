@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <div class="topbar">
@@ -32,28 +32,61 @@
       <h1>Templates Pack</h1>
       <p class="sub">A reusable ops kit for freelancers and agencies: onboarding, delivery, reporting, and prompts — organized so you can ship faster.</p>
 
-      <div style="margin-top:16px" class="mockWindow" aria-label="Templates preview">
+      <div style="margin-top:16px" class="mockWindow" aria-label="Templates app preview">
         <div class="mockInner">
           <div class="mockTop">
             <div class="dots" aria-hidden="true"><span class="dotx"></span><span class="dotx"></span><span class="dotx"></span></div>
-            <div class="mockTitle">Templates Pack — Client Ops Kit</div>
+            <div class="mockTitle">Templates — Client Ops Workspace</div>
             <div class="mockBadge">Reusable</div>
           </div>
-          <div class="mockGrid">
-            <div class="mockCard half">
-              <div class="kpiLabel">Included systems</div>
-              <ul class="mockList">
-                <li class="mockItem"><span>Onboarding checklist</span><span class="mockPill teal">SOP</span></li>
-                <li class="mockItem"><span>Delivery QA + handoff</span><span class="mockPill">Template</span></li>
-                <li class="mockItem"><span>Weekly reporting</span><span class="mockPill">Template</span></li>
-              </ul>
-            </div>
-            <div class="mockCard half">
-              <div class="kpiLabel">Outcome</div>
-              <div class="mockKpi" style="margin-top:6px"><div><div class="kpiLabel">Time‑to‑deliver</div><div class="kpiValue">↓ 30%</div></div><div class="kpiUp">est.</div></div>
-              <div class="mockBar" style="width:66%"></div>
-            </div>
+
+          <div class="mockApp">
+            <aside class="mockSide" aria-label="Sidebar">
+              <div class="sideTitle">Library</div>
+              <nav class="mockNav">
+                <a class="active" href="#" onclick="return false"><span>Onboarding</span><span>8</span></a>
+                <a href="#" onclick="return false"><span>Delivery</span><span>10</span></a>
+                <a href="#" onclick="return false"><span>Reporting</span><span>6</span></a>
+                <a href="#" onclick="return false"><span>Prompts</span><span>20+</span></a>
+              </nav>
+            </aside>
+
+            <section class="mockMain" aria-label="Main">
+              <div class="mockMainTop">
+                <div class="mockSearch">Search templates…</div>
+                <div style="display:flex;gap:8px;align-items:center">
+                  <span class="mockChip teal">Notion</span>
+                  <span class="mockChip">SOPs</span>
+                </div>
+              </div>
+
+              <div class="mockSplit">
+                <div class="mockTable" aria-label="Template list">
+                  <div class="kpiLabel">Popular templates</div>
+                  <div class="mockRow"><div><strong>Client intake + scope</strong><small>Stops scope creep early</small></div><span class="mockPill teal">SOP</span></div>
+                  <div class="mockRow"><div><strong>Project setup checklist</strong><small>Folders, tasks, access, docs</small></div><span class="mockPill">Template</span></div>
+                  <div class="mockRow"><div><strong>Weekly report</strong><small>Client-ready summary format</small></div><span class="mockPill">Template</span></div>
+                </div>
+
+                <div class="mockChart" aria-label="Outcome">
+                  <div class="kpiLabel">Time‑to‑deliver (est.)</div>
+                  <svg viewBox="0 0 360 120" role="img" aria-label="efficiency chart">
+                    <defs>
+                      <linearGradient id="gt" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="rgba(20,184,166,.95)" />
+                        <stop offset="1" stop-color="rgba(6,182,212,.80)" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M10 38 C 70 52, 120 78, 180 86 C 240 92, 300 86, 350 74" fill="none" stroke="url(#gt)" stroke-width="4" stroke-linecap="round" />
+                    <path d="M10 38 C 70 52, 120 78, 180 86 C 240 92, 300 86, 350 74 L350 110 L10 110 Z" fill="rgba(20,184,166,.10)" />
+                    <line x1="10" y1="110" x2="350" y2="110" stroke="rgba(15,23,42,.10)" />
+                  </svg>
+                </div>
+              </div>
+            </section>
           </div>
+
+          <div class="micro" style="margin-top:12px">Aggressive liquid 3D + app-style preview (pure CSS). Real WebM clips can replace this later.</div>
         </div>
       </div>
 
