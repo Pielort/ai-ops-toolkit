@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <div class="topbar">
@@ -39,10 +39,50 @@
             <div class="mockTitle">Audit Scorecard → ROI Roadmap</div>
             <div class="mockBadge">Ranked by ROI</div>
           </div>
-          <div class="mockGrid">
-            <div class="mockCard third"><div class="mockKpi"><div><div class="kpiLabel">Clarity</div><div class="kpiValue">A‑</div></div><div class="kpiUp">+ fast</div></div><div class="mockBar" style="width:82%"></div></div>
-            <div class="mockCard third"><div class="mockKpi"><div><div class="kpiLabel">ROI</div><div class="kpiValue">High</div></div><div class="mockPill teal">Top 10</div></div><div class="mockBar" style="width:70%"></div></div>
-            <div class="mockCard third"><div class="mockKpi"><div><div class="kpiLabel">Effort</div><div class="kpiValue">Low</div></div><div class="mockPill">Quick wins</div></div><div class="mockBar" style="width:58%"></div></div>
+
+          <div class="mockApp" style="margin-top:12px">
+            <aside class="mockSide" aria-label="Sidebar">
+              <div class="sideTitle">Products</div>
+              <nav class="mockNav">
+                <a class="active" href="#" onclick="return false"><span>Audit</span><span>$499</span></a>
+                <a href="#" onclick="return false"><span>Templates</span><span>$79</span></a>
+                <a href="#" onclick="return false"><span>Sprint</span><span>from</span></a>
+              </nav>
+            </aside>
+
+            <section class="mockMain" aria-label="Main">
+              <div class="mockMainTop">
+                <div class="mockSearch">Search deliverables…</div>
+                <div style="display:flex;gap:8px;align-items:center">
+                  <span class="mockChip teal">48h</span>
+                  <span class="mockChip">Top 10</span>
+                </div>
+              </div>
+
+              <div class="mockSplit">
+                <div class="mockChart" aria-label="Chart">
+                  <div class="kpiLabel">Impact forecast</div>
+                  <svg viewBox="0 0 360 120" role="img" aria-label="impact chart">
+                    <defs>
+                      <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+                        <stop offset="0" stop-color="rgba(20,184,166,.95)" />
+                        <stop offset="1" stop-color="rgba(6,182,212,.80)" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M10 96 C 55 94, 75 86, 108 82 C 146 78, 156 64, 188 60 C 222 56, 236 44, 270 40 C 304 36, 320 26, 350 22" fill="none" stroke="url(#g2)" stroke-width="4" stroke-linecap="round" />
+                    <path d="M10 96 C 55 94, 75 86, 108 82 C 146 78, 156 64, 188 60 C 222 56, 236 44, 270 40 C 304 36, 320 26, 350 22 L350 110 L10 110 Z" fill="rgba(6,182,212,.10)" />
+                    <line x1="10" y1="110" x2="350" y2="110" stroke="rgba(15,23,42,.10)" />
+                  </svg>
+                </div>
+
+                <div class="mockTable" aria-label="Roadmap table">
+                  <div class="kpiLabel">What you get</div>
+                  <div class="mockRow"><div><strong>Scorecard</strong><small>Clear baseline + bottlenecks</small></div><span class="mockPill teal">Deliver</span></div>
+                  <div class="mockRow"><div><strong>Top 10 roadmap</strong><small>Ranked by ROI + effort</small></div><span class="mockPill">Plan</span></div>
+                  <div class="mockRow"><div><strong>Loom walkthrough</strong><small>Implementation guidance</small></div><span class="mockPill">Explain</span></div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>
