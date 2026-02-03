@@ -7,10 +7,14 @@
   --border:rgba(15,23,42,.12);
   --shadow:0 18px 40px rgba(2,8,23,.12);
   --shadow2:0 10px 24px rgba(2,8,23,.10);
-  --accent:#2563eb;
+
+  /* Brand (teal-first) */
+  --accent:#14b8a6;
+  --accentRgb:20,184,166;
   --accent2:#06b6d4;
   --accent3:#22c55e;
-  --ring:0 0 0 4px rgba(37,99,235,.14);
+  --ring:0 0 0 4px rgba(var(--accentRgb),.16);
+
   --radius:18px;
   --radius2:14px;
 }
@@ -21,7 +25,7 @@ body{
   font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
   color:var(--text);
   background:
-    radial-gradient(1200px 760px at 15% -10%, rgba(37,99,235,.14), transparent 55%),
+    radial-gradient(1200px 760px at 15% -10%, rgba(var(--accentRgb),.16), transparent 55%),
     radial-gradient(900px 640px at 92% 0%, rgba(6,182,212,.14), transparent 55%),
     radial-gradient(1100px 720px at 60% 110%, rgba(34,197,94,.10), transparent 55%),
     var(--bg);
@@ -40,7 +44,7 @@ a{color:inherit}
 }
 .topbar .inner{max-width:1120px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}
-.logo{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg, rgba(37,99,235,1), rgba(6,182,212,1));box-shadow:0 10px 20px rgba(37,99,235,.22);position:relative}
+.logo{width:34px;height:34px;border-radius:12px;background:linear-gradient(135deg, rgba(var(--accentRgb),1), rgba(6,182,212,1));box-shadow:0 10px 20px rgba(var(--accentRgb),.22);position:relative}
 .logo:after{content:"";position:absolute;inset:1px;border-radius:11px;background:linear-gradient(135deg, rgba(255,255,255,.20), rgba(255,255,255,.02));}
 .nav{display:flex;align-items:center;gap:16px;color:var(--muted);font-weight:600;font-size:13px;flex-wrap:wrap}
 .nav a{text-decoration:none;opacity:.92}
@@ -50,8 +54,8 @@ a{color:inherit}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.78);text-decoration:none;font-weight:700;box-shadow:var(--shadow2)}
 .btn:hover{transform:translateY(-1px)}
 .btn:active{transform:translateY(0)}
-.btn.primary{background:linear-gradient(180deg, rgba(37,99,235,1), rgba(37,99,235,.86));border-color:rgba(37,99,235,.38);color:#fff;box-shadow:0 18px 30px rgba(37,99,235,.22)}
-.btn.primary:focus{outline:none;box-shadow:0 18px 30px rgba(37,99,235,.22), var(--ring)}
+.btn.primary{background:linear-gradient(180deg, rgba(var(--accentRgb),1), rgba(var(--accentRgb),.86));border-color:rgba(var(--accentRgb),.38);color:#fff;box-shadow:0 18px 30px rgba(var(--accentRgb),.22)}
+.btn.primary:focus{outline:none;box-shadow:0 18px 30px rgba(var(--accentRgb),.22), var(--ring)}
 .btn.ghost{background:rgba(255,255,255,.55);box-shadow:none}
 .btn.disabled{opacity:.55;pointer-events:none}
 
@@ -79,5 +83,37 @@ h1{margin:14px 0 10px;font-size:46px;line-height:1.03;letter-spacing:-.04em}
 .footer{color:var(--muted);font-size:13px;line-height:1.6}
 .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
 
-.notice{border:1px solid rgba(37,99,235,.20);background:rgba(37,99,235,.06);padding:12px 14px;border-radius:16px;color:rgba(37,99,235,.95)}
-.notice strong{color:rgba(20,54,140,1)}
+.notice{border:1px solid rgba(var(--accentRgb),.20);background:rgba(var(--accentRgb),.06);padding:12px 14px;border-radius:16px;color:rgba(var(--accentRgb),.98)}
+.notice strong{color:rgba(10,120,110,1)}
+
+/* Product-style mock UI (reusable) */
+.mockWindow{border:1px solid rgba(15,23,42,.10);border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.72));box-shadow:var(--shadow);overflow:hidden;position:relative}
+.mockWindow:before{content:"";position:absolute;inset:-140px -160px auto auto;width:380px;height:380px;border-radius:999px;background:radial-gradient(circle at 30% 30%, rgba(var(--accentRgb),.22), transparent 55%)}
+.mockWindow:after{content:"";position:absolute;inset:auto -140px -160px auto;width:380px;height:380px;border-radius:999px;background:radial-gradient(circle at 30% 30%, rgba(6,182,212,.22), transparent 55%)}
+.mockInner{position:relative;padding:14px}
+.mockTop{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px;border:1px solid rgba(15,23,42,.10);border-radius:14px;background:rgba(255,255,255,.82)}
+.dots{display:flex;gap:7px;align-items:center}
+.dotx{width:10px;height:10px;border-radius:999px;background:rgba(15,23,42,.18)}
+.dotx:nth-child(1){background:rgba(239,68,68,.75)}
+.dotx:nth-child(2){background:rgba(245,158,11,.75)}
+.dotx:nth-child(3){background:rgba(34,197,94,.70)}
+.mockTitle{font-weight:900;letter-spacing:-.02em;font-size:13px}
+.mockBadge{font-size:11px;font-weight:900;color:rgba(var(--accentRgb),1);background:rgba(var(--accentRgb),.10);border:1px solid rgba(var(--accentRgb),.16);padding:5px 8px;border-radius:999px}
+
+.mockGrid{margin-top:12px;display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.mockCard{grid-column:span 12;border:1px solid rgba(15,23,42,.10);border-radius:16px;background:rgba(255,255,255,.84);padding:12px;box-shadow:var(--shadow2)}
+@media(min-width:980px){.mockCard.third{grid-column:span 4}.mockCard.half{grid-column:span 6}}
+
+.mockKpi{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.kpiLabel{color:var(--muted2);font-size:12px;font-weight:800}
+.kpiValue{font-size:22px;font-weight:950;letter-spacing:-.03em}
+.kpiUp{font-size:11px;font-weight:900;color:rgba(34,197,94,1);background:rgba(34,197,94,.10);border:1px solid rgba(34,197,94,.18);padding:4px 8px;border-radius:999px}
+
+.mockBar{margin-top:10px;height:10px;border-radius:999px;background:linear-gradient(90deg, rgba(var(--accentRgb),.95), rgba(6,182,212,.70));position:relative;overflow:hidden}
+.mockBar:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);transform:translateX(-60%);animation:shimmer 2.8s ease-in-out infinite}
+@keyframes shimmer{0%{transform:translateX(-70%)}50%{transform:translateX(70%)}100%{transform:translateX(70%)}}
+
+.mockList{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.mockItem{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.mockPill{font-size:11px;font-weight:900;color:rgba(15,23,42,.78);background:rgba(15,23,42,.06);border:1px solid rgba(15,23,42,.10);padding:4px 8px;border-radius:999px}
+.mockPill.teal{color:rgba(var(--accentRgb),1);background:rgba(var(--accentRgb),.10);border-color:rgba(var(--accentRgb),.16)}

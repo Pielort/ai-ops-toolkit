@@ -37,7 +37,7 @@
     @keyframes float2{0%,100%{transform:perspective(800px) rotateX(10deg) rotateY(10deg) translateY(0)}50%{transform:perspective(800px) rotateX(10deg) rotateY(10deg) translateY(-8px)}}
     @keyframes float3{0%,100%{transform:perspective(800px) rotateX(10deg) rotateY(-6deg) translateY(0)}50%{transform:perspective(800px) rotateX(10deg) rotateY(-6deg) translateY(-5px)}}
     .cardTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
-    .tag{font-size:11px;font-weight:800;color:rgba(37,99,235,1);background:rgba(37,99,235,.10);border:1px solid rgba(37,99,235,.16);padding:5px 8px;border-radius:999px}
+    .tag{font-size:11px;font-weight:800;color:rgba(var(--accentRgb),1);background:rgba(var(--accentRgb),.10);border:1px solid rgba(var(--accentRgb),.16);padding:5px 8px;border-radius:999px}
     .miniRow{display:grid;gap:8px}
     .miniLine{height:10px;border-radius:999px;background:linear-gradient(90deg, rgba(15,23,42,.08), rgba(15,23,42,.03))}
     .miniLine.w70{width:70%}
@@ -47,7 +47,7 @@
     /* Pricing cards */
     .pricing{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
     .tier{grid-column:span 12;border:1px solid rgba(15,23,42,.10);background:rgba(255,255,255,.78);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .tier.reco{border-color:rgba(37,99,235,.24);background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.72))}
+    .tier.reco{border-color:rgba(var(--accentRgb),.24);background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.72))}
     @media(min-width:980px){.tier{grid-column:span 4}}
     .tierHead{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .tierName{margin:12px 0 4px;font-size:16px;font-weight:800;letter-spacing:-.01em}
@@ -97,23 +97,48 @@
         </div>
 
         <div class="heroRight">
-          <div class="preview" aria-label="Product preview">
-            <div class="cards">
-              <div class="stack">
-                <div class="card3d top">
-                  <div class="cardTitle"><strong>Audit Scorecard</strong><span class="tag">48h</span></div>
-                  <div class="miniRow"><div class="miniLine w85"></div><div class="miniLine w70"></div><div class="miniLine w55"></div></div>
+          <div class="mockWindow" aria-label="Product preview">
+            <div class="mockInner">
+              <div class="mockTop">
+                <div class="dots" aria-hidden="true"><span class="dotx"></span><span class="dotx"></span><span class="dotx"></span></div>
+                <div class="mockTitle">AI Ops Toolkit — Audit Dashboard</div>
+                <div class="mockBadge">48h delivery</div>
+              </div>
+
+              <div class="mockGrid">
+                <div class="mockCard third">
+                  <div class="mockKpi"><div><div class="kpiLabel">Ops Health</div><div class="kpiValue">78/100</div></div><div class="kpiUp">+12</div></div>
+                  <div class="mockBar" style="width:78%"></div>
                 </div>
-                <div class="card3d mid">
-                  <div class="cardTitle"><strong>ROI Roadmap</strong><span class="tag">Top 10</span></div>
-                  <div class="miniRow"><div class="miniLine w70"></div><div class="miniLine w85"></div><div class="miniLine w55"></div></div>
+                <div class="mockCard third">
+                  <div class="mockKpi"><div><div class="kpiLabel">Hours saved / wk</div><div class="kpiValue">6.5</div></div><div class="kpiUp">ROI</div></div>
+                  <div class="mockBar" style="width:64%"></div>
                 </div>
-                <div class="card3d bot">
-                  <div class="cardTitle"><strong>Workflow Blueprint</strong><span class="tag">Build next</span></div>
-                  <div class="miniRow"><div class="miniLine w55"></div><div class="miniLine w70"></div><div class="miniLine w85"></div></div>
+                <div class="mockCard third">
+                  <div class="mockKpi"><div><div class="kpiLabel">Next build</div><div class="kpiValue">Intake</div></div><div class="mockPill teal">Quick win</div></div>
+                  <div class="mockBar" style="width:52%"></div>
+                </div>
+
+                <div class="mockCard half">
+                  <div class="kpiLabel">Top findings</div>
+                  <ul class="mockList">
+                    <li class="mockItem"><span>Scope leaks in onboarding</span><span class="mockPill teal">High</span></li>
+                    <li class="mockItem"><span>Reporting is manual + inconsistent</span><span class="mockPill">Med</span></li>
+                    <li class="mockItem"><span>No failure alerts / retries</span><span class="mockPill">Med</span></li>
+                  </ul>
+                </div>
+
+                <div class="mockCard half">
+                  <div class="kpiLabel">48h roadmap (preview)</div>
+                  <ul class="mockList">
+                    <li class="mockItem"><span>1) Intake → CRM → tasks</span><span class="mockPill teal">Week 1</span></li>
+                    <li class="mockItem"><span>2) Status → weekly report</span><span class="mockPill">Week 2</span></li>
+                    <li class="mockItem"><span>3) Alerts + logging</span><span class="mockPill">Week 3</span></li>
+                  </ul>
                 </div>
               </div>
-              <div class="micro" style="margin-top:12px">Next: real product clips (WebM) + optional lightweight 3D.</div>
+
+              <div class="micro" style="margin-top:12px">Product-style visuals (fast HTML/CSS). WebM clips can replace this later.</div>
             </div>
           </div>
         </div>
