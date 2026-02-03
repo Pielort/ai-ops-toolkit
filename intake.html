@@ -5,20 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Ops Toolkit — Audit Intake</title>
   <meta name="description" content="Audit intake: complete after payment. Delivery in 48 hours." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root{--bg:#070a12;--card:#0c1222;--muted:#9aa6bd;--text:#e8edf6;--border:rgba(148,163,184,.16)}
+    :root{
+      --bg:#f8fafc;
+      --text:#0b1220;
+      --muted:#5b677a;
+      --muted2:#7a879b;
+      --border:rgba(15,23,42,.12);
+      --shadow:0 18px 40px rgba(2,8,23,.10);
+      --shadow2:0 10px 24px rgba(2,8,23,.08);
+      --accent:#2563eb;
+      --ring:0 0 0 4px rgba(37,99,235,.14);
+      --radius:18px;
+    }
     *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--text)}
-    .wrap{max-width:860px;margin:0 auto;padding:26px 16px 70px}
-    .card{border:1px solid var(--border);background:rgba(12,18,34,.7);border-radius:18px;padding:18px}
-    h1{margin:12px 0 8px;font-size:28px;letter-spacing:-.02em}
-    p{margin:0 0 10px;color:var(--muted);line-height:1.55}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 16px;border-radius:12px;border:1px solid var(--border);background:rgba(12,18,34,.78);text-decoration:none;font-weight:700;color:var(--text)}
-    .btn.primary{border-color:rgba(125,211,252,.55)}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:
+      radial-gradient(1000px 680px at 15% -10%, rgba(37,99,235,.12), transparent 55%),
+      radial-gradient(900px 640px at 92% 0%, rgba(6,182,212,.10), transparent 55%),
+      var(--bg);
+      color:var(--text)
+    }
+    a{color:inherit}
+    .wrap{max-width:920px;margin:0 auto;padding:28px 18px 84px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.78);text-decoration:none;font-weight:800;box-shadow:var(--shadow2)}
+    .btn.primary{background:linear-gradient(180deg, rgba(37,99,235,1), rgba(37,99,235,.86));border-color:rgba(37,99,235,.38);color:#fff;box-shadow:0 18px 30px rgba(37,99,235,.18)}
+    .btn.primary:focus{outline:none;box-shadow:0 18px 30px rgba(37,99,235,.18), var(--ring)}
+
+    .card{margin-top:14px;border:1px solid var(--border);background:rgba(255,255,255,.78);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    h1{margin:14px 0 8px;font-size:30px;letter-spacing:-.03em}
+    p{margin:0 0 10px;color:var(--muted);line-height:1.65}
+    .hr{height:1px;background:rgba(15,23,42,.10);margin:18px 0}
     .list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
-    .list li{margin:7px 0}
-    .hr{height:1px;background:var(--border);margin:18px 0}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+    .list li{margin:8px 0}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;color:var(--muted2)}
   </style>
 </head>
 <body>
@@ -36,12 +58,12 @@
       <div class="hr"></div>
 
       <p><strong>Step 2 — Send your details</strong></p>
-      <p>We’ll replace this block with a proper form (Tally/Typeform) next. For now, send the following in one message:</p>
+      <p>We’ll replace this with a proper form (Tally/Typeform) next. For now, send the following in one message/email:</p>
       <ul class="list">
         <li>Your name + best contact (email/Telegram)</li>
-        <li>What you do (freelancer/agency) + niche</li>
+        <li>Freelancer or agency + niche</li>
         <li>Current tools (Zapier/Make/Airtable/Notion/CRM/etc.)</li>
-        <li>Your current workflow (from lead → onboarding → delivery → reporting)</li>
+        <li>Your current workflow (lead → onboarding → delivery → reporting)</li>
         <li>Top 3 bottlenecks (what wastes time or breaks)</li>
         <li>Goal for the next 30 days</li>
         <li>Any constraints (region, crypto only, etc.)</li>
@@ -57,7 +79,7 @@
         <li>Loom walkthrough (15–25 minutes)</li>
       </ul>
 
-      <p style="margin-top:12px;color:var(--muted)">Support contact: <span class="mono">(add email/telegram here)</span></p>
+      <p style="margin-top:12px">Support contact: <span class="mono">Steveaiops@outlook.com</span></p>
     </div>
   </div>
 </body>
