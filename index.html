@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AI Ops Toolkit — Automation Audit in 48 hours</title>
-  <meta name="description" content="Automation Audit + Roadmap in 48 hours. Built for freelancers and agencies. Practical systems, no hype." />
+  <meta name="description" content="Automation Audit + Roadmap in 48 hours. Built for freelancers and agencies." />
   <meta property="og:title" content="AI Ops Toolkit" />
   <meta property="og:description" content="Automation Audit + Roadmap in 48 hours — so you know exactly what to build next." />
   <meta property="og:type" content="website" />
@@ -12,184 +12,54 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/styles.css" />
   <style>
-    :root{
-      --bg:#f8fafc;
-      --bg2:#ffffff;
-      --text:#0b1220;
-      --muted:#5b677a;
-      --muted2:#7a879b;
-      --border:rgba(15,23,42,.12);
-      --shadow:0 18px 40px rgba(2,8,23,.12);
-      --shadow2:0 10px 24px rgba(2,8,23,.10);
-      --accent:#2563eb;
-      --accent2:#06b6d4;
-      --accent3:#22c55e;
-      --ring:0 0 0 4px rgba(37,99,235,.14);
-      --radius:18px;
-      --radius2:14px;
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 760px at 15% -10%, rgba(37,99,235,.14), transparent 55%),
-        radial-gradient(900px 640px at 92% 0%, rgba(6,182,212,.14), transparent 55%),
-        radial-gradient(1100px 720px at 60% 110%, rgba(34,197,94,.10), transparent 55%),
-        var(--bg);
-    }
-    a{color:inherit}
-    .wrap{max-width:1120px;margin:0 auto;padding:22px 18px 84px}
-
-    /* Top nav */
-    .topbar{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter:saturate(160%) blur(10px);
-      background:rgba(248,250,252,.72);
-      border-bottom:1px solid rgba(15,23,42,.08);
-    }
-    .topbar .inner{max-width:1120px;margin:0 auto;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em}
-    .logo{
-      width:34px;height:34px;border-radius:12px;
-      background:linear-gradient(135deg, rgba(37,99,235,1), rgba(6,182,212,1));
-      box-shadow:0 10px 20px rgba(37,99,235,.22);
-      position:relative;
-    }
-    .logo:after{content:"";position:absolute;inset:1px;border-radius:11px;background:linear-gradient(135deg, rgba(255,255,255,.20), rgba(255,255,255,.02));}
-    .nav{display:flex;align-items:center;gap:16px;color:var(--muted);font-weight:600;font-size:13px}
-    .nav a{text-decoration:none;opacity:.92}
-    .nav a:hover{opacity:1}
-
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:12px;border:1px solid var(--border);background:rgba(255,255,255,.78);text-decoration:none;font-weight:700;box-shadow:var(--shadow2)}
-    .btn:hover{transform:translateY(-1px)}
-    .btn:active{transform:translateY(0)}
-    .btn.primary{background:linear-gradient(180deg, rgba(37,99,235,1), rgba(37,99,235,.86));border-color:rgba(37,99,235,.38);color:#fff;box-shadow:0 18px 30px rgba(37,99,235,.22)}
-    .btn.primary:focus{outline:none;box-shadow:0 18px 30px rgba(37,99,235,.22), var(--ring)}
-    .btn.ghost{background:rgba(255,255,255,.55);box-shadow:none}
-
-    /* Hero */
+    /* page-specific pieces */
     .hero{padding:46px 0 18px}
     .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;align-items:center}
     .heroLeft{grid-column:span 12}
     .heroRight{grid-column:span 12}
-    @media(min-width:980px){
-      .heroLeft{grid-column:span 7}
-      .heroRight{grid-column:span 5}
-    }
-
-    .pill{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:8px 12px;border-radius:999px;
-      border:1px solid rgba(15,23,42,.10);
-      background:rgba(255,255,255,.70);
-      color:var(--muted);
-      font-weight:700;font-size:12px;
-      box-shadow:var(--shadow2);
-    }
-    .dot{width:8px;height:8px;border-radius:999px;background:var(--accent3)}
-
-    h1{margin:14px 0 10px;font-size:46px;line-height:1.03;letter-spacing:-.04em}
-    @media(max-width:520px){h1{font-size:38px}}
-    .sub{margin:0;color:var(--muted);font-size:17px;line-height:1.6;max-width:64ch}
+    @media(min-width:980px){.heroLeft{grid-column:span 7}.heroRight{grid-column:span 5}}
 
     .ctaRow{margin-top:16px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-    .micro{color:var(--muted2);font-size:13px;line-height:1.45}
 
-    /* Product preview (AI/3D-ish) */
-    .preview{
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:var(--radius);
-      background:linear-gradient(180deg, rgba(255,255,255,.84), rgba(255,255,255,.70));
-      box-shadow:var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .preview:before{
-      content:"";
-      position:absolute;inset:-120px -140px auto auto;
-      width:340px;height:340px;border-radius:999px;
-      background:radial-gradient(circle at 30% 30%, rgba(37,99,235,.28), transparent 55%);
-      filter:blur(0px);
-    }
-    .preview:after{
-      content:"";
-      position:absolute;inset:auto -120px -140px auto;
-      width:340px;height:340px;border-radius:999px;
-      background:radial-gradient(circle at 30% 30%, rgba(6,182,212,.26), transparent 55%);
-    }
-
+    /* Product preview */
+    .preview{border:1px solid rgba(15,23,42,.10);border-radius:var(--radius);background:linear-gradient(180deg, rgba(255,255,255,.84), rgba(255,255,255,.70));box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .preview:before{content:"";position:absolute;inset:-120px -140px auto auto;width:340px;height:340px;border-radius:999px;background:radial-gradient(circle at 30% 30%, rgba(37,99,235,.28), transparent 55%)}
+    .preview:after{content:"";position:absolute;inset:auto -120px -140px auto;width:340px;height:340px;border-radius:999px;background:radial-gradient(circle at 30% 30%, rgba(6,182,212,.26), transparent 55%)}
     .cards{position:relative;padding:18px}
-    .card3d{
-      border:1px solid rgba(15,23,42,.10);
-      border-radius:16px;
-      background:rgba(255,255,255,.86);
-      box-shadow:0 18px 40px rgba(2,8,23,.14);
-      padding:14px;
-      transform-origin:center;
-      will-change:transform;
-    }
+    .card3d{border:1px solid rgba(15,23,42,.10);border-radius:16px;background:rgba(255,255,255,.86);box-shadow:0 18px 40px rgba(2,8,23,.14);padding:14px;transform-origin:center;will-change:transform}
     .stack{display:grid;gap:12px}
-
-    .card3d.top{
-      transform:perspective(800px) rotateX(10deg) rotateY(-12deg);
-      animation:float1 7s ease-in-out infinite;
-    }
-    .card3d.mid{
-      transform:perspective(800px) rotateX(10deg) rotateY(10deg);
-      animation:float2 8s ease-in-out infinite;
-    }
-    .card3d.bot{
-      transform:perspective(800px) rotateX(10deg) rotateY(-6deg);
-      animation:float3 9s ease-in-out infinite;
-    }
+    .card3d.top{transform:perspective(800px) rotateX(10deg) rotateY(-12deg);animation:float1 7s ease-in-out infinite}
+    .card3d.mid{transform:perspective(800px) rotateX(10deg) rotateY(10deg);animation:float2 8s ease-in-out infinite}
+    .card3d.bot{transform:perspective(800px) rotateX(10deg) rotateY(-6deg);animation:float3 9s ease-in-out infinite}
     @keyframes float1{0%,100%{transform:perspective(800px) rotateX(10deg) rotateY(-12deg) translateY(0)}50%{transform:perspective(800px) rotateX(10deg) rotateY(-12deg) translateY(-6px)}}
     @keyframes float2{0%,100%{transform:perspective(800px) rotateX(10deg) rotateY(10deg) translateY(0)}50%{transform:perspective(800px) rotateX(10deg) rotateY(10deg) translateY(-8px)}}
     @keyframes float3{0%,100%{transform:perspective(800px) rotateX(10deg) rotateY(-6deg) translateY(0)}50%{transform:perspective(800px) rotateX(10deg) rotateY(-6deg) translateY(-5px)}}
-
     .cardTitle{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
     .tag{font-size:11px;font-weight:800;color:rgba(37,99,235,1);background:rgba(37,99,235,.10);border:1px solid rgba(37,99,235,.16);padding:5px 8px;border-radius:999px}
     .miniRow{display:grid;gap:8px}
-    .miniLine{height:10px;border-radius:999px;background:linear-gradient(90deg, rgba(15,23,42,.08), rgba(15,23,42,.03));}
+    .miniLine{height:10px;border-radius:999px;background:linear-gradient(90deg, rgba(15,23,42,.08), rgba(15,23,42,.03))}
     .miniLine.w70{width:70%}
     .miniLine.w85{width:85%}
     .miniLine.w55{width:55%}
 
-    /* Sections */
-    .section{margin-top:28px}
-    .section h2{margin:0 0 8px;font-size:22px;letter-spacing:-.02em}
-    .kicker{margin:0 0 14px;color:var(--muted);line-height:1.6}
-
-    .cardsGrid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    .panel{grid-column:span 12;border:1px solid rgba(15,23,42,.10);background:rgba(255,255,255,.76);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow2)}
-    @media(min-width:980px){.panel.half{grid-column:span 6}.panel.third{grid-column:span 4}}
-    .panel h3{margin:0 0 8px;font-size:16px;letter-spacing:-.01em}
-    .panel p{margin:0;color:var(--muted);line-height:1.55}
-    .list{margin:10px 0 0;padding-left:18px;color:var(--muted)}
-    .list li{margin:7px 0}
-
-    /* Pricing */
+    /* Pricing cards */
     .pricing{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
     .tier{grid-column:span 12;border:1px solid rgba(15,23,42,.10);background:rgba(255,255,255,.78);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
-    .tier.reco{border-color:rgba(37,99,235,.24);background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.72));}
+    .tier.reco{border-color:rgba(37,99,235,.24);background:linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.72))}
     @media(min-width:980px){.tier{grid-column:span 4}}
     .tierHead{display:flex;align-items:center;justify-content:space-between;gap:12px}
     .tierName{margin:12px 0 4px;font-size:16px;font-weight:800;letter-spacing:-.01em}
     .price{margin:8px 0 10px;font-size:30px;font-weight:900;letter-spacing:-.03em}
     .fine{color:var(--muted2);font-size:12px;line-height:1.45}
 
-    /* FAQ */
     details{border:1px solid rgba(15,23,42,.10);border-radius:16px;padding:12px 14px;background:rgba(255,255,255,.76);box-shadow:var(--shadow2)}
     details+details{margin-top:12px}
     summary{cursor:pointer;font-weight:800}
     details p{margin:10px 0 0;color:var(--muted);line-height:1.6}
 
-    .hr{height:1px;background:rgba(15,23,42,.10);margin:22px 0}
-    .footer{color:var(--muted);font-size:13px;line-height:1.6}
-    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+    @media(max-width:560px){.nav .btn.primary{display:none}}
   </style>
 </head>
 <body>
@@ -197,6 +67,7 @@
     <div class="inner">
       <div class="brand"><span class="logo" aria-hidden="true"></span> AI Ops Toolkit</div>
       <div class="nav">
+        <a href="/products.html">Products</a>
         <a href="#pricing">Pricing</a>
         <a href="#faq">FAQ</a>
         <a href="/intake.html">Intake</a>
@@ -218,13 +89,11 @@
 
           <div class="ctaRow">
             <a class="btn primary" href="https://nowpayments.io/payment/?iid=5483187609" target="_blank" rel="noopener">Book Audit ($499)</a>
-            <a class="btn ghost" href="#pricing">See pricing</a>
+            <a class="btn ghost" href="/products.html">Browse products</a>
             <span class="micro">Risk reversal: If you don’t leave with a clear roadmap + next steps, refund.</span>
           </div>
 
-          <p class="micro" style="margin-top:10px">
-            Crypto accepted via NOWPayments (USDC/USDT/ETH + BTC). ERC20 supported.
-          </p>
+          <p class="micro" style="margin-top:10px">Crypto accepted via NOWPayments (USDC/USDT/ETH + BTC). ERC20 supported.</p>
         </div>
 
         <div class="heroRight">
@@ -232,42 +101,19 @@
             <div class="cards">
               <div class="stack">
                 <div class="card3d top">
-                  <div class="cardTitle">
-                    <strong>Audit Scorecard</strong>
-                    <span class="tag">48h</span>
-                  </div>
-                  <div class="miniRow">
-                    <div class="miniLine w85"></div>
-                    <div class="miniLine w70"></div>
-                    <div class="miniLine w55"></div>
-                  </div>
+                  <div class="cardTitle"><strong>Audit Scorecard</strong><span class="tag">48h</span></div>
+                  <div class="miniRow"><div class="miniLine w85"></div><div class="miniLine w70"></div><div class="miniLine w55"></div></div>
                 </div>
-
                 <div class="card3d mid">
-                  <div class="cardTitle">
-                    <strong>ROI Roadmap</strong>
-                    <span class="tag">Top 10</span>
-                  </div>
-                  <div class="miniRow">
-                    <div class="miniLine w70"></div>
-                    <div class="miniLine w85"></div>
-                    <div class="miniLine w55"></div>
-                  </div>
+                  <div class="cardTitle"><strong>ROI Roadmap</strong><span class="tag">Top 10</span></div>
+                  <div class="miniRow"><div class="miniLine w70"></div><div class="miniLine w85"></div><div class="miniLine w55"></div></div>
                 </div>
-
                 <div class="card3d bot">
-                  <div class="cardTitle">
-                    <strong>Workflow Blueprint</strong>
-                    <span class="tag">Build next</span>
-                  </div>
-                  <div class="miniRow">
-                    <div class="miniLine w55"></div>
-                    <div class="miniLine w70"></div>
-                    <div class="miniLine w85"></div>
-                  </div>
+                  <div class="cardTitle"><strong>Workflow Blueprint</strong><span class="tag">Build next</span></div>
+                  <div class="miniRow"><div class="miniLine w55"></div><div class="miniLine w70"></div><div class="miniLine w85"></div></div>
                 </div>
               </div>
-              <div class="micro" style="margin-top:12px">(3D product clips are next — this is the placeholder preview.)</div>
+              <div class="micro" style="margin-top:12px">Next: real product clips (WebM) + optional lightweight 3D.</div>
             </div>
           </div>
         </div>
@@ -279,35 +125,16 @@
         <div class="panel half">
           <h3>For freelancers</h3>
           <p>Stop reinventing onboarding and reporting. Reduce admin hours. Deliver faster with a repeatable system.</p>
-          <ul class="list">
-            <li>Cleaner intake → clearer scope</li>
-            <li>Fewer follow‑ups + missed tasks</li>
-            <li>More time for paid work</li>
-          </ul>
+          <ul class="list"><li>Cleaner intake → clearer scope</li><li>Fewer follow‑ups + missed tasks</li><li>More time for paid work</li></ul>
         </div>
-
         <div class="panel half">
           <h3>For agencies</h3>
           <p>Standardize delivery across the team. Reduce handoff failures. Make reporting consistent and scalable.</p>
-          <ul class="list">
-            <li>Repeatable onboarding + delivery</li>
-            <li>Consistent reporting cadence</li>
-            <li>Ops you can scale without chaos</li>
-          </ul>
+          <ul class="list"><li>Repeatable onboarding + delivery</li><li>Consistent reporting cadence</li><li>Ops you can scale without chaos</li></ul>
         </div>
-
-        <div class="panel third">
-          <h3>48-hour turnaround</h3>
-          <p>Pay → intake → we review your workflow → you receive scorecard + roadmap + Loom.</p>
-        </div>
-        <div class="panel third">
-          <h3>Built on your tools</h3>
-          <p>Zapier/Make/Airtable/Notion/CRM — we recommend the simplest stack for your workflow and budget.</p>
-        </div>
-        <div class="panel third">
-          <h3>Clarity & execution</h3>
-          <p>No jargon decks. You’ll know what to build, why it matters, and what it unlocks.</p>
-        </div>
+        <div class="panel third"><h3>48-hour turnaround</h3><p>Pay → intake → we review your workflow → you receive scorecard + roadmap + Loom.</p></div>
+        <div class="panel third"><h3>Built on your tools</h3><p>Zapier/Make/Airtable/Notion/CRM — we recommend the simplest stack for your workflow and budget.</p></div>
+        <div class="panel third"><h3>Clarity & execution</h3><p>No jargon decks. You’ll know what to build, why it matters, and what it unlocks.</p></div>
       </div>
     </div>
 
@@ -317,59 +144,30 @@
 
       <div class="pricing">
         <div class="tier">
-          <div class="tierHead">
-            <div class="pill"><span style="width:8px;height:8px;border-radius:999px;background:rgba(15,23,42,.35)"></span> Self‑serve</div>
-          </div>
+          <div class="tierHead"><div class="pill"><span style="width:8px;height:8px;border-radius:999px;background:rgba(15,23,42,.35)"></span> Self‑serve</div></div>
           <div class="tierName">Templates Pack</div>
           <div class="price">$79</div>
           <p style="margin:0;color:var(--muted);line-height:1.6">Notion templates + SOPs + prompts you can reuse across clients.</p>
-          <ul class="list">
-            <li>Onboarding checklist + SOPs</li>
-            <li>Delivery + reporting templates</li>
-            <li>Prompt library (sales + ops)</li>
-          </ul>
-          <div class="ctaRow" style="margin-top:14px">
-            <a class="btn" href="#" title="Coming next">Get Templates (next)</a>
-          </div>
-          <div class="fine">Next: add checkout + instant delivery.</div>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="/templates.html">View templates</a><a class="btn disabled" href="#">Buy (next)</a></div>
+          <div class="fine">Checkout + instant delivery will be added next.</div>
         </div>
 
         <div class="tier reco">
-          <div class="tierHead">
-            <div class="pill"><span class="dot" style="background:var(--accent)"></span> Recommended</div>
-          </div>
+          <div class="tierHead"><div class="pill"><span class="dot" style="background:var(--accent)"></span> Recommended</div></div>
           <div class="tierName">Automation Audit + Roadmap</div>
           <div class="price">$499</div>
           <p style="margin:0;color:var(--muted);line-height:1.6">Scorecard + top 10 roadmap ranked by ROI/effort, delivered in 48 hours.</p>
-          <ul class="list">
-            <li>Stack check + bottlenecks</li>
-            <li>Automation scorecard</li>
-            <li>Top 10 roadmap + Quick Win</li>
-            <li>Loom walkthrough (15–25 min)</li>
-          </ul>
-          <div class="ctaRow" style="margin-top:14px">
-            <a class="btn primary" href="https://nowpayments.io/payment/?iid=5483187609" target="_blank" rel="noopener">Book Audit ($499)</a>
-            <a class="btn" href="/intake.html">After payment → Intake</a>
-          </div>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn primary" href="https://nowpayments.io/payment/?iid=5483187609" target="_blank" rel="noopener">Book Audit</a><a class="btn" href="/intake.html">After payment → Intake</a><a class="btn" href="/thanks-audit.html">Thank you page</a></div>
           <div class="fine">Crypto accepted (USDC/USDT/ETH + BTC). ERC20 supported.</div>
         </div>
 
         <div class="tier">
-          <div class="tierHead">
-            <div class="pill"><span style="width:8px;height:8px;border-radius:999px;background:rgba(15,23,42,.35)"></span> Build it for you</div>
-          </div>
+          <div class="tierHead"><div class="pill"><span style="width:8px;height:8px;border-radius:999px;background:rgba(15,23,42,.35)"></span> Build it for you</div></div>
           <div class="tierName">Implementation Sprint</div>
           <div class="price">from $1,500</div>
           <p style="margin:0;color:var(--muted);line-height:1.6">We build 2–3 workflows end‑to‑end in 7 days, plus handoff training.</p>
-          <ul class="list">
-            <li>2–3 workflows (intake → delivery → reporting)</li>
-            <li>Optional Airtable/Notion setup</li>
-            <li>Handoff + 14‑day support</li>
-          </ul>
-          <div class="ctaRow" style="margin-top:14px">
-            <a class="btn" href="#" title="Coming next">Apply for Sprint (next)</a>
-          </div>
-          <div class="fine">Next: add application + scheduling.</div>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="/sprint.html">Sprint details</a><a class="btn disabled" href="#">Apply (next)</a></div>
+          <div class="fine">Application + scheduling will be added next.</div>
         </div>
       </div>
     </div>
@@ -378,33 +176,17 @@
       <h2>FAQ</h2>
       <p class="kicker">Short answers. Clear expectations.</p>
 
-      <details open>
-        <summary>Do I need Zapier/Make/Airtable already?</summary>
-        <p>No. We’ll recommend the simplest stack for your workflow and budget.</p>
-      </details>
-      <details>
-        <summary>What do I receive within 48 hours?</summary>
-        <p>Your scorecard, a prioritized 10‑item roadmap, and a Loom walkthrough explaining next steps.</p>
-      </details>
-      <details>
-        <summary>Is implementation included?</summary>
-        <p>The Audit is strategy + roadmap. If you want us to build it, upgrade to an Implementation Sprint.</p>
-      </details>
-      <details>
-        <summary>Refunds?</summary>
-        <p>If you don’t receive a clear roadmap + next steps you can execute, you can request a refund.</p>
-      </details>
-      <details>
-        <summary>How do I start after payment?</summary>
-        <p>After you pay, complete the intake page: <a href="/intake.html">/intake.html</a>.</p>
-      </details>
+      <details open><summary>Do I need Zapier/Make/Airtable already?</summary><p>No. We’ll recommend the simplest stack for your workflow and budget.</p></details>
+      <details><summary>What do I receive within 48 hours?</summary><p>Your scorecard, a prioritized 10‑item roadmap, and a Loom walkthrough explaining next steps.</p></details>
+      <details><summary>Is implementation included?</summary><p>The Audit is strategy + roadmap. If you want us to build it, upgrade to an Implementation Sprint.</p></details>
+      <details><summary>Refunds?</summary><p>If you don’t receive a clear roadmap + next steps you can execute, you can request a refund.</p></details>
+      <details><summary>How do I start after payment?</summary><p>After you pay, complete the intake page: <a href="/intake.html">/intake.html</a>.</p></details>
 
       <div class="hr"></div>
-
       <div class="footer">
         <div><strong>Payments:</strong> Crypto accepted via NOWPayments (USDC/USDT/ETH + BTC). ERC20 supported.</div>
         <div style="margin-top:6px"><strong>Disclosure:</strong> If this site includes affiliate links in the future, we may earn a commission at no extra cost to you.</div>
-        <div style="margin-top:6px"><strong>Contact:</strong> <span class="mono">Steveaiops@outlook.com</span></div>
+        <div style="margin-top:6px"><strong>Support:</strong> <span class="mono">Steveaiops@outlook.com</span></div>
       </div>
     </div>
 
